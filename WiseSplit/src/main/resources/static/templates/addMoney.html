@@ -1,0 +1,45 @@
+<div ng-controller="addAmountController">
+
+<h1>AddMoney  : {{postResultMessage}}</h1>
+
+
+<div>
+<p>User1</p>
+<p>Amount :</p>
+<input type="text" name="amount" id="amount" placeholder="Enter Amount" ng-model="amount1"> <br>
+</div>
+
+<div>
+<p>Comment :</p>
+<input type="text" name="comment" id="comment" placeholder="Enter Comment" ng-model="comment1"> <br>
+</div>
+
+<button ng-click="AddAmount(1,amount1,comment1)">Add</button> 
+<div>
+<p>User2</h4>p>
+<p>Amount :</p>
+<input type="text" name="amount" id="amount" placeholder="Enter Amount" ng-model="amount2"> <br>
+</div>
+
+<div>
+<p>Comment :</h4>p>
+<input type="text" name="comment" id="comment" placeholder="Enter Comment" ng-model="comment2"> <br>
+</div>
+
+<button ng-click="AddAmount(2,amount2,comment2)">Add</button> 
+
+<div>
+<p>User3</p>
+<p>Amount :</h4>p>
+<input type="text" name="amount" id="amount" placeholder="Enter Amount" ng-model="amount3"> <br>
+</div>
+
+<div>
+<p>Comment :</p>
+<input type="text" name="comment" id="comment" placeholder="Enter Comment" ng-model="comment3"> <br>
+</div>
+
+<button ng-click="AddAmount(3,amount3,comment3)">Add</button> 
+
+
+</div>

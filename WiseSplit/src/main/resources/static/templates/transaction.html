@@ -1,0 +1,23 @@
+<div ng-controller = "transactionController">
+
+
+<p>Page Transaction</p>
+
+
+
+<div ng-repeat="x in userRecords">{{x.firstname}}
+
+
+<p>Amount :</p>
+<input type="text" name="amount" id="amount" placeholder="Enter Amount" ng-model="amount"> <br>
+
+<p>Comment :</p>
+<input type="text" name="comment" id="comment" placeholder="Enter Comment" ng-model="comment"> <br>
+
+<button ng-click="addAccountMoney(x.userId,amount,comment)">Add Account Money </button> <br><br><br>
+</div>
+
+<p>{{postResultMessages}}</p>
+
+<button ng-click="getUsers()">Get Users</button> 
+</div>

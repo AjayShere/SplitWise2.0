@@ -1,0 +1,54 @@
+<div ng-controller="resultcontroller">
+
+<p>Calculation</p>
+
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 15px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Expenditure</th>
+</tr>
+<tr ng-repeat="x in records">
+
+  <td>{{x[2]}}</td>
+  <td>{{x[0]}}</td>
+
+</tr>
+</table>
+<br>
+<br>
+<br>
+
+<button ng-click="getResult()">Get Result</button><br>
+
+<br>
+<br>
+<br>
+
+
+<button ng-click="getExpenditure()">Get Expenditure</button>
+
+<h1 ng-repeat="t in transactionmoney">{{t}}</h1>
+
+<br>
+<br>
+<br>
+
+<button ng-click="getToAndFrom()">Get To And From</button>
+
+<h1 ng-repeat="u in toandfrom">{{u}}</h1>
+
+</div>
