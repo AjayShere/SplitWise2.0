@@ -22,6 +22,8 @@ import com.split.helper.SplitWiseHelper;
 import com.split.service.AccountService;
 import com.split.util.LoggerExt;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 public class AccountController {
 
@@ -37,6 +39,8 @@ public class AccountController {
 	@Autowired
 	SplitWiseHelper splitWiseHelper;
 
+	
+	@ApiOperation(value="Add Money", notes="Adds Money to account", httpMethod = "POST")
 	@RequestMapping(value = "v1/addMoney", method = RequestMethod.POST)
 	public ResponseEntity<ResponseBean> addMoney(@RequestBody AddRequestBean addRequestBean) {
 
@@ -77,6 +81,7 @@ public class AccountController {
 
 	}
 
+	@ApiOperation(value="get Calculation", notes="Calculaates individual expenditure", httpMethod = "GET")
 	@RequestMapping(value = "/v1/calculation", method = RequestMethod.GET)
 	public ResponseEntity<List<AccountBean>> monthlyCalculation() {
 
@@ -98,6 +103,7 @@ public class AccountController {
 		return new ResponseEntity<List<AccountBean>>(list, HttpStatus.OK);
 	}
 
+	@ApiOperation(value="Calculation Account", notes="Calculation Account", httpMethod = "GET")
 	@RequestMapping(value = "v1/calculationAccount", method = RequestMethod.GET)
 	public ResponseEntity<List<Object>> monthlyCalculationAccount() {
 
@@ -133,6 +139,7 @@ public class AccountController {
 	 * return new ResponseEntity<List<CalculationBean>>(list, HttpStatus.OK); }
 	 */
 
+	@ApiOperation(value="Calculation Account By Date", notes="Calculation account by Date", httpMethod = "POST")
 	@RequestMapping(value = "v1/calculationAccountByDate", method = RequestMethod.POST)
 	public List<AccountBean> monthlyCalculationAccountByDate(@RequestBody RequestBean requestBean) {
 
@@ -152,7 +159,7 @@ public class AccountController {
 		return newList;
 	}
 
-	
+	@ApiOperation(value="expenditure Calculation", notes="Expenditure Calculation", httpMethod = "GET")
 	@RequestMapping(value = "v1/expenditureCalculations", method = RequestMethod.GET)
 	public ResponseEntity<List<AccountBean>> monthlyExpenditureCalculation() {
 
@@ -237,7 +244,7 @@ public class AccountController {
 	  }
 	
 	
-	
+	@ApiOperation(value="Amount Transfer Calculation", notes="Amount Cvcalulation tranfer", httpMethod = "GET")
 	@RequestMapping(value = "v1/moneyTransfer", method = RequestMethod.GET)
 	public ResponseEntity<List<String>> monthlyMoneyTransfer() {
 
@@ -299,7 +306,7 @@ public class AccountController {
 	}
 	
 	
-	
+	@ApiOperation(value="Money From And To", notes="Money From and to", httpMethod = "GET")
 	@RequestMapping(value = "v1/fromAndTo", method = RequestMethod.GET)
 	public ResponseEntity<List<String>> fromAndTo() {
 		 

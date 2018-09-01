@@ -18,6 +18,8 @@ import com.split.entity.user;
 import com.split.service.UserService;
 import com.split.util.LoggerExt;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
  public class UserController {
 	
@@ -31,6 +33,7 @@ import com.split.util.LoggerExt;
 	UserDao userDao;
 	
 	
+	@ApiOperation(value="Create User", notes="Cerate User", httpMethod = "POST")
 	@RequestMapping(value ="/v1/createUser" , method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE)
  	public String saveUser(@RequestBody userBean userbean) {
 		
@@ -51,6 +54,7 @@ import com.split.util.LoggerExt;
 	}
  	
 	
+	@ApiOperation(value="Update User", notes="Update User", httpMethod = "POST")
 	@RequestMapping(value ="/v1/updateUser" , method = RequestMethod.POST)
  	public user updateUser(@RequestBody userBean userbean) {
 		
@@ -64,6 +68,7 @@ import com.split.util.LoggerExt;
 		return null;
 	}
  	
+	@ApiOperation(value="Get All User", notes="Get all User", httpMethod = "GET")
  	@RequestMapping(value="v1/getAllUsers" , method =RequestMethod.GET)
  	public ResponseEntity<List<userBean>> getUser() {
  		List<user> userList;
